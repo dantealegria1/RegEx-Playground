@@ -8,3 +8,6 @@ def index(request):
 
 def reverse_string_ui(request):
     return render(request, 'reverse_string.html')
+
+def regex_generator_ui(request):
+    return render(request,'regex_generator.html')
