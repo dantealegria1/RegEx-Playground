@@ -5,7 +5,9 @@ import exrex
 
 def reverse_string_logic(request):
     if request.method == 'POST':
-        input_string = request.POST.get('string', '')  # Use .get() to access POST data
+        input_string = request.POST.get('string', '')
+        if not input_string:
+            return JsonResponse({'error': 'String is required'}, status=400)
         reversed_string = input_string[::-1]  # Reverse the string
         return JsonResponse({'reversed_string': reversed_string})
     return JsonResponse({'error': 'Invalid request method'}, status=400)
@@ -13,6 +15,8 @@ def reverse_string_logic(request):
 def regex_generator(request):
     if request.method == 'POST':
         input_string = request.POST.get('string', '')
+        if not input_string:
+            return JsonResponse({'error': 'String is required'}, status=400)
         
         # Generate regex patterns
         pattern = [
@@ -90,6 +94,7 @@ def regex_normal(request):
     if request.method == 'POST':
         pattern = request.POST.get('pattern', '')
         string = request.POST.get('string','')
+        
         if not pattern or not string:
             return JsonResponse({
                 'error': 'All fields are required'
