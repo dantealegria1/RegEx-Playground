@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'regex_logic',
-        'regex_ui',
+    'regex_ui',
 ]
 
 MIDDLEWARE = [
