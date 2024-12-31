@@ -11,3 +11,10 @@ def reverse_string_ui(request):
 
 def regex_generator_ui(request):
     return render(request,'regex_generator.html')
+
+def regex_testing_ui(request):
+    return render(request, 'regex_testing.html')
+
+def regex_normal_ui(request):
+    return render(request, 'regex_normal.html')
+
