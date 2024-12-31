@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),  # Suponiendo que hay una vista llamada index
+    path('reverse/', views.reverse_string_ui, name='reverse')
 ]

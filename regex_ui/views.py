@@ -6,3 +6,5 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Welcome to the Home Page!")
 
+def reverse_string_ui(request):
+    return render(request, 'reverse_string.html')
