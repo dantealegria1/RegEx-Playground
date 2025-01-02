@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Regex Playground{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9; /* Light neutral background */
+    color: #333; /* Dark text for good readability */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+/* Header Styles */
+.header {
+    width: 100%;
+    background: #ffffff; /* White background for header */
+    border-bottom: 1px solid #e0e0e0; /* Subtle border for separation */
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-bottom: 2rem;
+}
+
+.nav-menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    color: #2b4b8c; /* Blue accent color */
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #333; /* Neutral text color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #e6f0fa; /* Light blue background on hover */
+    color: #2b4b8c; /* Blue accent text on hover */
+}
+
+.nav-links a.active {
+    background-color: #2b4b8c; /* Blue background for active link */
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Main Content Styles */
+.content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff; /* Clean white card-like appearance */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for modern look */
+    border-radius: 12px;
+}
+footer {
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-menu">
+            <a href="{% url 'index' %}" class="logo">RegEx Playground</a>
+            <div class="nav-links">
+                <a href="{% url 'regex' %}" {% if request.resolver_match.url_name == 'regex' %}class="active"{% endif %}>Generate RegEx</a>
+                <a href="{% url 'testing' %}" {% if request.resolver_match.url_name == 'testing' %}class="active"{% endif %}>RegEx Testing</a>
+                <a href="{% url 'normal' %}" {% if request.resolver_match.url_name == 'normal' %}class="active"{% endif %}>Traditional Testing</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Regex Playground. by <a href="https://example.com">Dante Alegria</a>.</p>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

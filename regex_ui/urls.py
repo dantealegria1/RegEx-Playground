@@ -7,5 +7,6 @@ urlpatterns = [
     path('reverse/', views.reverse_string_ui, name='reverse'),
     path('regex/', views.regex_generator_ui, name='regex'),
     path('testing/', views.regex_testing_ui, name='testing'),
-    path('normal/', views.regex_normal_ui, name='normal')
+    path('normal/', views.regex_normal_ui, name='normal'),
+    path('', views.index, name='index')
 ]

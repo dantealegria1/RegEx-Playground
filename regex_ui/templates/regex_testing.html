@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regex String Generator</title>
-    <script>
-      async function reverseString(event) {
+{% extends 'base.html' %}
+
+{% block title %}Regex String Generator{% endblock %}
+
+{% block extra_js %}
+<script>
+    async function reverseString(event) {
         event.preventDefault();
         const inputString = document.getElementById("pattern").value;
         
@@ -33,7 +32,7 @@
                     "Content-Type": "application/x-www-form-urlencoded",
                     "X-CSRFToken": csrftoken,
                 },
-                body: new URLSearchParams({ pattern: inputString }), // Changed 'string' to 'pattern'
+                body: new URLSearchParams({ pattern: inputString }),
             });
             
             const data = await response.json();
@@ -46,15 +45,15 @@
             document.getElementById("result").innerText = `Error: ${error.message}`;
         }
     }
-    </script>
-</head>
-<body>
-    <h1>Regex String Generator</h1>
+</script>
+{% endblock %}
+
+{% block content %}
+    <h1>Regular Expresion String Generator</h1>
     <form onsubmit="reverseString(event)">
         <label for="pattern">Enter a regex pattern:</label>
         <input type="text" id="pattern" name="pattern" required>
         <button type="submit">Generate Strings</button>
     </form>
     <p id="result"></p>
-</body>
-</html>
+{% endblock %}
