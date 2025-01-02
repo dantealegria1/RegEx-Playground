@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Regex Playground{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
     <style>
 /* General Reset */
 * {
@@ -124,6 +128,7 @@ footer {
                 <a href="{% url 'regex' %}" {% if request.resolver_match.url_name == 'regex' %}class="active"{% endif %}>Generate RegEx</a>
                 <a href="{% url 'testing' %}" {% if request.resolver_match.url_name == 'testing' %}class="active"{% endif %}>RegEx Testing</a>
                 <a href="{% url 'normal' %}" {% if request.resolver_match.url_name == 'normal' %}class="active"{% endif %}>Traditional Testing</a>
+                <a href="{% url 'info' %}" {% if request.resolver_match.url_name == 'info' %}class="active"{% endif %}>What is RegEx?</a>
             </div>
         </nav>
     </header>

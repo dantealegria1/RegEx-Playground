@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}Understanding Regular Expressions (Regex){% endblock %}
+
+{% block content %}
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Understanding Regular Expressions (Regex)</h1>
+      <p class="intro">
+        <strong>Regular expressions (regex)</strong> are powerful tools for pattern matching within strings. They define search patterns used for tasks like searching, replacing, and validating text input. Regex is widely used across various programming languages like Python, JavaScript, Java, and many others.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Why Use Regular Expressions?</h2>
+      <p class="section-description">
+        Regex offers functionalities for precise pattern matching within text:
+      </p>
+      <ul class="list">
+        <li>Find specific words or patterns in a document.</li>
+        <li>Validate input, such as email addresses and phone numbers.</li>
+        <li>Extract specific parts of a string.</li>
+        <li>Replace or format text in bulk.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Basic Syntax</h2>
+      <p class="section-description">Here are some common regex symbols and their meanings:</p>
+      <ul class="regex-syntax">
+        <li><strong>.</strong> - Matches any single character except newline.</li>
+        <li><strong>^</strong> - Matches the beginning of the string.</li>
+        <li><strong>$</strong> - Matches the end of the string.</li>
+        <li><strong>*</strong> - Matches zero or more occurrences of the preceding character.</li>
+        <li><strong>+</strong> - Matches one or more occurrences of the preceding character.</li>
+        <li><strong>?</strong> - Matches zero or one occurrence of the preceding character.</li>
+        <li><strong>\\</strong> - Escape character to use special characters literally.</li>
+        <li><strong>[ ]</strong> - Matches any one character enclosed within the brackets.</li>
+        <li><strong>|</strong> - OR operator to match one of the specified alternatives.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Examples of Regular Expressions</h2>
+      
+      <div class="example">
+        <h3 class="example-title">1. Matching a Specific Word</h3>
+        <p class="example-description">
+          To search for the word <code>apple</code> in text, the regex would be:
+        </p>
+        <pre class="code">apple</pre>
+        <p class="example-description">This matches the exact word <code>apple</code>.</p>
+      </div>
+
+      <div class="example">
+        <h3 class="example-title">2. Matching Any Character</h3>
+        <p class="example-description">
+          The dot symbol (<code>.</code>) matches any character except newline. For example, <code>a.b</code> matches:
+        </p>
+        <pre class="code">axb, acb, a1b, a!b</pre>
+        <p class="example-description">It won't match <code>ab</code> (because there's no character between <code>a</code> and <code>b</code>).</p>
+      </div>
+
+      <div class="example">
+        <h3 class="example-title">3. Matching Multiple Occurrences</h3>
+        <p class="example-description">
+          The plus symbol (<code>+</code>) matches one or more occurrences of the preceding character. For instance, <code>a+b</code> matches:
+        </p>
+        <pre class="code">ab, aab, aaab</pre>
+        <p class="example-description">But it won't match <code>b</code> (since at least one <code>a</code> is required).</p>
+      </div>
+
+      <div class="example">
+        <h3 class="example-title">4. Matching Any Digit</h3>
+        <p class="example-description">
+          The <code>\d</code> symbol matches any digit (0-9). For example, <code>\d{3}</code> matches:
+        </p>
+        <pre class="code">123, 456, 789</pre>
+        <p class="example-description">It won't match <code>12a</code> (as it contains a non-digit).</p>
+      </div>
+
+      <div class="example">
+        <h3 class="example-title">5. Validating an Email Address</h3>
+        <p class="example-description">
+          To validate an email address, use this regex:
+        </p>
+        <pre class="code">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</pre>
+        <p class="example-description">This ensures the input matches a typical email format.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Useful Regex Tools</h2>
+      <p class="section-description">
+        There are several online tools to test and build regex patterns. Some popular ones include:
+      </p>
+      <ul class="list">
+        <li><a href="https://regexr.com/" target="_blank">Regexr</a></li>
+        <li><a href="https://regex101.com/" target="_blank">Regex101</a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Conclusion</h2>
+      <p class="section-description">
+        Regular expressions are invaluable for text manipulation in programming. By mastering regex syntax and special characters, you can leverage its full potential for efficient text searching, validation, and replacement.
+      </p>
+    </section>
+
+    <div class="gif-container">
+      <h3 class="gif-title">Regex Meme:</h3>
+      <div class="tenor-gif-embed" data-postid="25635350" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+        <a href="https://tenor.com/view/regular-expression-regex-meme-computer-smashing-keyboard-smashing-keyboard-gif-gif-25635350">Regular Expression Regex GIF</a> from <a href="https://tenor.com/search/regular+expression-gifs">Regular Expression GIFs</a>
+      </div>
+      <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+  </div>
+
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .title {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .intro {
+      font-size: 18px;
+      color: #555;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .section-description {
+      font-size: 16px;
+      color: #777;
+    }
+    .list {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .regex-syntax {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    .regex-syntax li {
+      background: #eef;
+      padding: 5px;
+      margin: 5px 0;
+    }
+    .example {
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #f0f0f0;
+      border-radius: 8px;
+    }
+    .example-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .example-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .code {
+      font-family: 'Courier New', monospace;
+      background: #e8e8e8;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .gif-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .gif-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+{% endblock %}
+

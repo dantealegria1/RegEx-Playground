@@ -17,3 +17,6 @@ def regex_normal_ui(request):
 
 def index(request):
     return render(request, 'index.html')
+
+def info(request):
+    return render(request, 'info.html')

@@ -1,8 +1,9 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regex Matcher</title>
+{% extends 'base.html' %}
+
+{% block title %}Regex String Generator{% endblock %}
+
+{% block extra_js %}
+
     <script>
       async function regexMatch(event) {
         event.preventDefault();
@@ -53,8 +54,10 @@
         }
     }
     </script>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
+
     <h1>Regex Matcher</h1>
     <form onsubmit="regexMatch(event)">
         <label for="pattern">Enter a regex pattern:</label>
@@ -66,7 +69,8 @@
         <button type="submit">Check Match</button>
     </form>
     <p id="result"></p>
-    <p id="match"></p>
-</body>
-</html>
+    <p id="match" style='display: none;'></p>
+
+{% endblock %}
+
 
