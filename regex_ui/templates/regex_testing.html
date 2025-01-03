@@ -49,11 +49,55 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Regular Expresion String Generator</h1>
-    <form onsubmit="reverseString(event)">
-        <label for="pattern">Enter a regex pattern:</label>
-        <input type="text" id="pattern" name="pattern" required>
-        <button type="submit">Generate Strings</button>
-    </form>
-    <p id="result"></p>
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center;">Regular Expression String Generator</h1>
+        
+        <div style="
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        ">
+            <form onsubmit="reverseString(event)" style="
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            ">
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="pattern">Enter a regex pattern:</label>
+                    <input type="text" 
+                           id="pattern" 
+                           name="pattern" 
+                           required 
+                           style="
+                               width: 100%;
+                               padding: 8px;
+                               border: 1px solid #ccc;
+                               border-radius: 4px;
+                           ">
+                </div>
+                
+                <button type="submit" style="
+                    padding: 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                ">Generate Strings</button>
+            </form>
+            
+            <div style="margin-top: 20px;">
+                <p id="result" style="
+                    padding: 10px;
+                    border-radius: 4px;
+                    background-color: #f8f9fa;
+                    white-space: pre-wrap;
+                    word-break: break-word;
+                "></p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

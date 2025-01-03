@@ -57,20 +57,74 @@
 {% endblock %}
 
 {% block content %}
-
-    <h1>Regex Matcher</h1>
-    <form onsubmit="regexMatch(event)">
-        <label for="pattern">Enter a regex pattern:</label>
-        <input type="text" id="pattern" name="pattern" required><br><br>
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center;">Regex Matcher</h1>
         
-        <label for="string">Enter the string to match:</label>
-        <input type="text" id="string" name="string" required><br><br>
-        
-        <button type="submit">Check Match</button>
-    </form>
-    <p id="result"></p>
-    <p id="match" style='display: none;'></p>
-
+        <div style="
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        ">
+            <form onsubmit="regexMatch(event)" style="
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            ">
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="pattern">Enter a regex pattern:</label>
+                    <input type="text" 
+                           id="pattern" 
+                           name="pattern" 
+                           required 
+                           style="
+                               width: 100%;
+                               padding: 8px;
+                               border: 1px solid #ccc;
+                               border-radius: 4px;
+                           ">
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="string">Enter the string to match:</label>
+                    <input type="text" 
+                           id="string" 
+                           name="string" 
+                           required 
+                           style="
+                               width: 100%;
+                               padding: 8px;
+                               border: 1px solid #ccc;
+                               border-radius: 4px;
+                           ">
+                </div>
+                
+                <button type="submit" style="
+                    padding: 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                ">Check Match</button>
+            </form>
+            
+            <div style="margin-top: 20px;">
+                <p id="result" style="
+                    padding: 10px;
+                    border-radius: 4px;
+                    background-color: #f8f9fa;
+                "></p>
+                <p id="match" style="
+                    display: none;
+                    padding: 10px;
+                    border-radius: 4px;
+                    background-color: #f8f9fa;
+                    margin-top: 10px;
+                "></p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
-
-

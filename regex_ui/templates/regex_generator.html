@@ -48,20 +48,55 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Generate Regular Expression patterns</h1>
-    <div style="display: flex; gap: 2rem;">
-        <!-- Form Section -->
-        <form onsubmit="reverseString(event)" style="flex: 1;">
-            <label for="stringInput">Enter a string:</label>
-            <input type="text" id="stringInput" name="string" required>
-            <button type="submit">Generate patterns</button> 
-        </form>
-
-        <!-- Result Section -->
-        <div style="flex: 1;">
-            <label>Results:</label>
-            <div id="result"></div>
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center;">Generate Regular Expression Patterns</h1>
+        
+        <div style="
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        ">
+            <form onsubmit="reverseString(event)" style="
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            ">
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="stringInput">Enter a string:</label>
+                    <input type="text" 
+                           id="stringInput" 
+                           name="string" 
+                           required 
+                           style="
+                               width: 100%;
+                               padding: 8px;
+                               border: 1px solid #ccc;
+                               border-radius: 4px;
+                           ">
+                </div>
+                
+                <button type="submit" style="
+                    padding: 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                ">Generate Patterns</button>
+            </form>
+            
+            <div style="margin-top: 20px;">
+                <div id="result" style="
+                    padding: 10px;
+                    border-radius: 4px;
+                    background-color: #f8f9fa;
+                ">
+                    <label></label>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
-
