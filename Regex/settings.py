@@ -99,7 +99,7 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'  # Changed this to standard format
+STATIC_URL = 'regex_ui/static/'  # Changed this to standard format
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Added this for collectstatic
 STATICFILES_DIRS = [
     BASE_DIR / 'regex_ui/static/'
